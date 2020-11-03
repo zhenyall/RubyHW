@@ -98,10 +98,13 @@ p array.push(array.shift) or array.rotate(1)
 p '_________________________________________________'
 
 puts 'Дан целочисленный массив. Осуществить циклический сдвиг элементов массива вправо на одну позицию.'
-p "array = [2, -4, 9, -8, 5, -1]"
-p "array.rotate(5)"
-p array = [2, -4, 9, -8, 5, -1]
-p array.rotate(5)
+p "shift_to_right1_pos [2, -4, 9, -8, 5, -1]"
+def shift_to_right1_pos (arr)
+
+	arr.unshift(arr.pop)
+	p arr
+end
+shift_to_right1_pos [2, -4, 9, -8, 5, -1]
 p '_________________________________________________'
 
 puts 'Дан целочисленный массив. Вывести номер первого из тех его элементов, которые удовлетворяют двойному неравенству: A[0] < A[i] < A[-1]. Если таких элементов нет, то вывести [ ].'
@@ -148,16 +151,16 @@ p '_________________________________________________'
 
 puts 'Дан целочисленный массив. Вывести индексы массива в том порядке, в котором соответствующие им элементы образуют убывающую последовательность'
 p "array = [3, -5, 2, -8, 4, -1]"
-p "(0...array.size).sort.by{ |index| array[index] }.reverse"
+p "(0...array.size).sort_by{ |index| array[index] }.reverse"
 p array = [3, -5, 2, -8, 4, -1]
-p (0...array.size).sort.by{ |index| array[index] }.reverse
+p (0...array.size).sort_by{ |index| array[index] }.reverse
 p '_________________________________________________'
 
 puts 'Дан целочисленный массив. Вывести индексы массива в том порядке, в котором соответствующие им элементы образуют возрастающую последовательность.'
 p "array = [3, -5, 2, -8, 4, -1]"
-p "(0...array.size).sort.by{ |index| array[index] }"
+p "(0...array.size).sort_by{ |index| array[index] }"
 p array = [3, -5, 2, -8, 4, -1]
-p (0...array.size).sort.by{ |index| array[index] }
+p (0...array.size).sort_by{ |index| array[index] }
 p '_________________________________________________'
 
 puts 'Дан целочисленный массив. Найти количество его локальных минимумов.'
@@ -170,8 +173,8 @@ p '_________________________________________________'
 puts 'Дано число А и натуральное число N. Найти результат следующего выражения 1 + А + А*2 + А*3 + … + А*N.'
 p "A,N = 7, 13"
 p "p (1..N).inject(1){ |s,index| s+A*index}"
-p A,N = 7, 13
-p p (1..N).inject(1){ |s,index| s+A*index}
+  A,N = 7, 13
+p (1..N).inject(1){ |s,index| s+A*index}
 p '_________________________________________________'
 
 puts 'Дан целочисленный массив. Найти количество четных элементов.'
@@ -191,33 +194,26 @@ p '_________________________________________________'
 puts 'Дано число А и натуральное число N. Найти результат следующего выражения 1 - А + А*2 - А*3 + … + ((-1)**N)*А*N.'
 p "A,N = 7, 13"
 p "(1..N).inject(1+A+A*2-A*3){ |sum, index| sum + (-1**index)*A*index }"
-p A,N = 7, 13
+   A,N = 7, 13
 p (1..N).inject(1+A+A*2-A*3){ |sum, index| sum + (-1**index)*A*index }
 p '_________________________________________________'
 
-puts 'Дано вещественное число R и массив вещественных чисел. Найти два элемента массива, сумма которых наиболее близка к данному числу.'																									
-p "array = [2.3, -4.1, 1.7, 2.9, -5.3, 7.8, 8.2, -6.4]"
-p "R = 3.0"
-p "array.sort_by{|index| (index-R).abs}[0]"
-p array = [2.3, -4.1, 1.7, 2.9, -5.3, 7.8, 8.2, -6.4]
-p R = 3.0
-p array.sort_by{|index| (index-R).abs}[0]
-p '_________________________________________________'
-
-puts 'Дано вещественное число R и массив вещественных чисел. Найти два элемента массива, сумма которых наименее близка к данному числу.'																									
-p "array = [2.3, -4.1, 1.7, 2.9, -5.3, 7.8, 8.2, -6.4]"
-p "array.sort_by{|index| (index-R).abs}[6]"
-p array = [2.3, -4.1, 1.7, 2.9, -5.3, 7.8, 8.2, -6.4]
-p array.sort_by{|index| (index-R).abs}[6]
-p '_________________________________________________'
-
 puts 'Дан целочисленный массив. Вывести вначале все его четные элементы, а затем - нечетные.'
-p "array = [2, 4, 6, 1, 9, 5, 3, 8]"
-p "size = (0..array.size-1).to_a"
-p "size.partition{ |index| index [0].zero? }.flatten.map{ |index| array[index] }"
-p array = [2, 4, 6, 1, 9, 5, 3, 8]
-p size = (0..array.size-1).to_a
-p size.partition{ |index| index [0].zero? }.flatten.map{ |index| array[index] }
+p "even_odd_parser [4, 1, 2, 7, 4, 8]"
+def even_odd_parser	(array)
+
+	array1 = array.find_all{ |elem| elem % 2 == 0 }
+	array2 = array.find_all{ |elem| elem % 2 != 0 }
+
+	puts "even elements" 
+	p array1
+
+
+	puts "odd elements" 
+	p array2
+
+end
+even_odd_parser [4, 1, 2, 7, 4, 8]
 p '_________________________________________________'
 
 puts 'Дан целочисленный массив. Найти среднее арифметическое модулей его элементов.'
@@ -239,6 +235,33 @@ p "array = [2, -4, 9, -8, 5, -1]"
 p "array.select {|x| x.even?}. max"
 p array = [2, -4, 9, -8, 5, -1]
 p array.select {|x| x.even?}. max
+p '_________________________________________________'
+
+puts 'Дан целочисленный массив. Преобразовать его, прибавив к четным числам первый элемент. Первый и последний элементы массива не изменять.'
+p "even_plus_first_elem [4, 11, 9, 5, 7, 3]"
+def even_plus_first_elem (array)
+
+	array_new = []
+	array_new << array[0]
+	array[1...array.count-1].each { |elem| array_new << (elem % 2 == 0 ? elem + array[0] : elem) }
+	array_new << array[array.count-1]
+	p array_new.to_s
+	
+end
+even_plus_first_elem [4, 9, 11, 5, 7, 3]
+p '_________________________________________________'
+
+puts 'Дан целочисленный массив. Преобразовать его, прибавив к четным числам последний элемент. Первый и последний элементы массива не изменять.'
+p "even_plus_last_elem [4, 9, 11, 5, 7, 3]"
+def even_plus_last_elem (array)
+
+	array_new = []
+	array_new << array[0]
+	array[1...array.count-1].each { |elem| array_new << (elem % 2 == 0 ? elem + array[array.count-1] : elem) }
+	array_new << array[array.count-1]
+	p array_new.to_s
+end
+even_plus_last_elem [4, 9, 11, 5, 7, 3]
 p '_________________________________________________'
 
 puts 'Дан целочисленный массив. Удалить все элементы, встречающиеся ровно три раза.'
@@ -291,7 +314,7 @@ p "array[a+1..b].size"
 p array = [2, 1, 1, 5, 1, 2, 7]
 p a = array.index(array.min)
 p b = array.index(array.min)
-p array[a+1..b].size
+p array[a+1...b].size
 p '_________________________________________________'
 
 puts 'Дан целочисленный массив. Найти количество элементов, между первым и последним максимальным.'
@@ -302,7 +325,7 @@ p "array[a+1..b].size"
 p array = [6, 0, 3, 1, 0, 9, 1]
 p a = array.index(array.max)
 p b = array.index(array.max)
-p array[a+1..b].size
+p array[a+1...b].size
 p '_________________________________________________'
 
 puts 'Дан целочисленный массив. Найти все четные элементы.'
@@ -350,7 +373,7 @@ puts 'Дан целочисленный массив. Найти индекс п
 p "array = [2, 13, 4, 8, 13, 1, 7, 9, 1]"
 p "arr.index(array.min)"
 p array = [2, 13, 4, 8, 13, 1, 7, 9, 1]
-p arr.index(array.min)
+p array.index(array.min)
 p '_________________________________________________'
 
 puts 'Дан целочисленный массив. Найти индекс первого максимального элемента.'
@@ -372,7 +395,7 @@ p "array = [2, 13, 4, 8, 13, 1, 7, 9, 1]"
 p "array.rindex(array.max) "
 p array = [2, 13, 4, 8, 13, 1, 7, 9, 1]
 p array.rindex(array.max) 
-'_________________________________________________'
+p '_________________________________________________'
 
 puts 'Дан целочисленный массив. Найти два наибольших элемента.'		
 p "array = [5, 12, 9, 2, 34, 6, 11, 8]"
@@ -382,17 +405,17 @@ p "array.max"
 #or
 p "array = [5, 12, 9, 2, 34, 6, 11, 8]"
 p "array = arr.sort.uniq"
-p "arr.pop "
-p "arr.pop"
+p "array.pop "
+p "array.pop"
 p array = [5, 12, 9, 2, 34, 6, 11, 8]
 p array.max
 p array.delete(array.max)
 p array.max
 #or
 p array = [5, 12, 9, 2, 34, 6, 11, 8]
-p array = arr.sort.uniq
-p arr.pop 
-p arr.pop
+p array = array.sort.uniq
+p array.pop 
+p array.pop
 p '_________________________________________________'
 
 puts 'Дан целочисленный массив. Найти два наименьших элемента.'		
@@ -402,7 +425,7 @@ p "array.delete(arr.min)"
 p "array.min"
 p array = [5, 12, 9, 2, 34, 6, 11, 8]
 p array.min
-p array.delete(arr.min)
+p array.delete(array.min)
 p array.min
 p '_________________________________________________'
 
@@ -417,7 +440,7 @@ p '_________________________________________________'
 
 puts 'Дан целочисленный массив. Найти среднее арифметическое его элементов.'	
 p "array = [2, 13, 4, 8, 13, 1, 7, 9, 1]"
-p "arr.inject{ |sum, elem| sum + elem }.to_f / array.size"
+p "array.inject{ |sum, elem| sum + elem }.to_f / array.size"
 p array = [2, 13, 4, 8, 13, 1, 7, 9, 1]
-p arr.inject{ |sum, elem| sum + elem }.to_f / array.size
+p array.inject{ |sum, elem| sum + elem }.to_f / array.size
 p '_________________________________________________'
