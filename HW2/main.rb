@@ -51,6 +51,14 @@ while true do
     puts "Welcome to my pet"
     puts "Create pet -" ' create new pet with index and name'
     puts "Play with pet -" ' lets you play with the pet'
+    puts "Feed pet -" ' here you can feed your pet'
+    puts "Bathing pet -" ' the opportunity to bathe your pet'
+    puts "Walk with pet -" ' walk your pet'
+    puts "Go to sleep -" ' send your pet to sleep'
+    puts "Play with.. -" ' play with your pet'
+    puts "End walk -" ' walk your pet'
+    puts "Go sleep -" ' here you can send your pet to sleep'
+    puts "Option three -" ' all option'
   when 'exit'
     break
   else
