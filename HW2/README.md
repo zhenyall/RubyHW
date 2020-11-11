@@ -18,8 +18,10 @@ a simple example of a Dragon pet to create a menu, you can use until command == 
 ## Implementation:
 
 - First, copy or download this repository
-<https://github.com/zhenyall/RubyHW.git>
-$ git clone https://github.com/zhenyall/RubyHW.git 
+
+- <https://github.com/zhenyall/RubyHW.git>
+
+- $ git clone https://github.com/zhenyall/RubyHW.git 
 
 ## Next enter this command:
 
