@@ -20,7 +20,7 @@ class Pet
 	end
 
     def play
-    	puts 'You play with ' + @name + ' (a)'
+    	puts 'You play with' +@name
     	@mood = 100
     	time_passes
     end
@@ -62,7 +62,7 @@ class Pet
 
     def food
     	puts 'You feed ' + @name + ' (a)'
-    	@stomachisfull = 10
+    	@stomachisfull = 100
     	time_passes
     end
 
@@ -112,24 +112,21 @@ class Pet
     		@stomachisempty = @stomachisempty -7
     		@stomachisfull = @stomachisfull +7
     	else #pet highly hungry
-    		if @mood
-    		   @mood = 20
+    		if @drowsiness
+    		   @drowsiness = false
     		   puts #starts to get very angry
     		end
     		puts @name + ' from hunger begins to attack you'
     		exit #after that the game is over
     	end
 
-    	if hungry?
-    		if @stomachisfull
-    			@stomachisfull = 80
+    		if @stomachisfull >=100
+    			@stomachisfull <= 15
     			puts 'Begins to gnaw on the sofa'
     		end
-    		puts 'From hunger ' +@name + ' attacks and bites your hand'
-    	end
 
     	if @mood >=100
-    		@mood = 10
+    		@mood = 20
     		puts 'Come on ' +@name + ' went crazy and broke a vase'
     	end
 
@@ -158,3 +155,4 @@ class Pet
     	end
     end
 end
+
