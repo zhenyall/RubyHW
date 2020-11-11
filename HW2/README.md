@@ -27,7 +27,7 @@ a simple example of a Dragon pet to create a menu, you can use until command == 
 
 $ ruby main.rb
 
-- A menu for creating a pet will open if it does not exist, or a menu for interaction if a pet has already been created.
+- A menu for creating a pet - will open if it does not exist, or a menu for interaction if a pet - has already been created.
 
 ## Have a good game :)
 
