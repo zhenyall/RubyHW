@@ -1,4 +1,4 @@
-                        # **My Tamagochi**
+                        # My Tamagochi
 
 ## Object Oriented Programming Practice Ruby.
 
@@ -27,10 +27,10 @@ $ ruby main.rb
 
 - A menu for creating a pet will open if it does not exist, or a menu for interaction if a pet has already been created.
 
-##Have a good game :)
+## Have a good game :)
 
 
-##License
+## License
 
 This software is licensed under the MIT license.
 
