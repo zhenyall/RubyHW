@@ -1,4 +1,4 @@
-                        # My Tamagochi
+## My Tamagochi
 
 ## Object Oriented Programming Practice Ruby.
 
