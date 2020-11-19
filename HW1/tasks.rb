@@ -2,14 +2,14 @@
 
 puts 'Дан целочисленный массив. Необходимо вывести вначале его элементы с четными индексами, а затем - с нечетными.'
 p 'array = [1, 2, 3, 4, 5, 6, 7, 8]'
-p 'array.select.each_with_index { |_,index| index.even?} + array.select.each_with_index { |_,index| index.odd?}'
+p 'array.select.each_with_index { |_,index| index.even?} + array.select.each_with_index { |_,index| index.odd? }'
 p array = [1, 2, 3, 4, 5, 6, 7, 8]
 p array.select.each_with_index { |_, index| index.even? } + array.select.each_with_index { |_, index| index.odd? }
 p '_________________________________________________'
 
 puts 'Дан целочисленный массив. Необходимо вывести вначале его элементы с нечетными индексами, а затем - четными.'
 p 'array = [1, 2, 3, 4, 5, 6, 7, 8]'
-p 'array.select.each_with_index { |_,index| index.odd?} + array.select.each_with_index { |_,index| index.even?}'
+p 'array.select.each_with_index { |_,index| index.odd?} + array.select.each_with_index { |_,index| index.even? }'
 p array = [1, 2, 3, 4, 5, 6, 7, 8]
 p array.select.each_with_index { |_, index| index.odd? } + array.select.each_with_index { |_, index| index.even? }
 p '_________________________________________________'
@@ -17,7 +17,7 @@ p '_________________________________________________'
 puts 'Дан целочисленный массив. Заменить все положительные элементы на значение минимального.'
 p 'array = [1, -2, 6, -3, 7, -5, 8, -4]'
 p 'min = array.min'
-p 'array.map! {|x| x > 0? min: x}'
+p 'array.map! { |x| x > 0? min: x }'
 p array = [1, -2, 6, -3, 7, -5, 8, -4]
 p min = array.min
 p array.map! { |x| x.positive? ? min : x }
@@ -26,7 +26,7 @@ p '_________________________________________________'
 puts 'Дан целочисленный массив. Заменить все положительные элементы на значение максимального.'
 p 'array = [1, -2, 6, -3, 7, -5, 8, -4]'
 p 'max = array.max'
-p 'array.map! {|x| x > 0? max: x}'
+p 'array.map! { |x| x > 0? max: x }'
 p array = [1, -2, 6, -3, 7, -5, 8, -4]
 p max = array.max
 p array.map! { |x| x.positive? ? max : x }
@@ -35,7 +35,7 @@ p '_________________________________________________'
 puts 'Дан целочисленный массив. Заменить все отрицательные элементы на значение минимального.'
 p 'array = [1, -2, 6, -3, 7, -5, 8, -4]'
 p 'min = array.min'
-p 'array.map! {|x| x < 0? min: x}'
+p 'array.map! { |x| x < 0? min: x }'
 p array = [1, -2, 6, -3, 7, -5, 8, -4]
 p min = array.min
 p array.map! { |x| x.negative? ? min : x }
@@ -44,7 +44,7 @@ p '_________________________________________________'
 puts 'Дан целочисленный массив. Заменить все отрицательные элементы на значение максимального.'
 p 'array = [1, -2, 6, -3, 7, -5, 8, -4]'
 p 'max = array.max'
-p 'array.map! {|x| x < 0? max: x}'
+p 'array.map! { |x| x < 0? max: x }'
 p array = [1, -2, 6, -3, 7, -5, 8, -4]
 p max = array.max
 p array.map! { |x| x.negative? ? max : x }
@@ -52,14 +52,14 @@ p '_________________________________________________'
 
 puts 'Дан целочисленный массив. Упорядочить его по возрастанию.'
 p 'array = [3, 8, 1, 5, 2, 9]'
-p 'array.sort {|x, y| x <=> y}'
+p 'array.sort { |x, y| x <=> y }'
 p array = [3, 8, 1, 5, 2, 9]
 p array.sort { |x, y| x <=> y }
 p '_________________________________________________'
 
 puts 'Дан целочисленный массив. Упорядочить его по убыванию.'
 p 'array = [3, 8, 1, 5, 2, 9]'
-p 'array.sort {|x, y| y <=> x}'
+p 'array.sort { |x, y| y <=> x }'
 p array = [3, 8, 1, 5, 2, 9]
 p array.sort { |x, y| y <=> x }
 p '_________________________________________________'
@@ -80,14 +80,14 @@ p '_________________________________________________'
 
 puts 'Дан целочисленный массив. Найти минимальный четный элемент.'
 p 'array = [2, -4, 9, -8, 5, -1]'
-p 'array.select {|x| x.even?}. min'
+p 'array.select { |x| x.even? }. min'
 p array = [2, -4, 9, -8, 5, -1]
 p array.select(&:even?).min
 p '_________________________________________________'
 
 puts 'Дан целочисленный массив. Найти максимальный нечетный элемент.'
 p 'array = [-3, 2, -7, 9, -4, 6]'
-p 'array.select {|x| x.odd?}. max'
+p 'array.select { |x| x.odd? }. max'
 p array = [-3, 2, -7, 9, -4, 6]
 p array.select(&:odd?).max
 p '_________________________________________________'
